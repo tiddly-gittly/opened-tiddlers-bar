@@ -1,17 +1,14 @@
-# Wikitext plugin template for TiddlyWiki5
+# Opened Tiddlers Bar
 
-
-## !! Features
+## Features
 
 This plugin provides VSCode style "Opened Tiddlers" top bar
-
-
 
 Use the middle mouse button or the X button to close the tab.
 
 Use Shift + mouse wheel to swipe sideways to view.
 
-## !! Credits
+## Credits
 
 This plugin is based on [$:/plugins/bj/storytabs](http://bjtools.tiddlyspot.com/) , which is in MIT license, thank you, Buggyj!
 
