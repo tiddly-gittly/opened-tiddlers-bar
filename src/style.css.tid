@@ -95,11 +95,6 @@ div.opened-tiddlers-bar.tc-tab-buttons {
   margin: 0;
 }
 
-/** modify page style, move down to make sure tabs bar don't cover any page content */ 
-div.tc-page-container {
-  margin-top: 30px;
-}
-
 /** 收起侧边栏的按钮 */
 .tc-topbar-right {
   top: 18px;
