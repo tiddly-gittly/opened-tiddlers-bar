@@ -4,4 +4,6 @@ tags: $:/tags/AboveStory
 title: $:/plugins/linonetwo/opened-tiddlers-bar/AboveStory
 type: text/vnd.tiddlywiki
 
-<<opened-tiddlers-bar>>
+<div class="opened-tiddlers-bar-container">
+  <<opened-tiddlers-bar>>
+</div>
