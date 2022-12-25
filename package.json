@@ -16,8 +16,9 @@
     "fs-extra": "^11.1.0",
     "get-port": "^6.1.2",
     "github-action-ts-run-api": "^2.3.0",
+    "rimraf": "^3.0.2",
     "serve": "14.1.2",
-    "tiddlywiki": "^5.2.3",
+    "tiddlywiki": "^5.2.5",
     "tw5-plugin-packer": "0.0.10",
     "ws": "^8.11.0",
     "zx": "7.1.1"
