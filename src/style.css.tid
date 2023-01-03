@@ -60,7 +60,7 @@ section.story-backdrop > p > .opened-tiddlers-bar-container, section.story-backd
   display: flex;
   background-color: white;
   backdrop-filter: blur(3px);
-  background: <<colour button-background>>;
+  background: <<colour tab-background-selected>>;
 }
 
 
