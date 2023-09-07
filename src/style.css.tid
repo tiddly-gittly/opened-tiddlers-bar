@@ -58,6 +58,9 @@ section.story-backdrop > p > .opened-tiddlers-bar-container, section.story-backd
   width: 100%;
   margin: 0;
   display: flex;
+  background: transparent;
+}
+section.story-backdrop > p > .opened-tiddlers-bar-container {
   background-color: white;
   backdrop-filter: blur(3px);
   background: <<colour tab-background-selected>>;
