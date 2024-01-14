@@ -8,6 +8,7 @@ section.story-backdrop .opened-tiddlers-bar-container {
   position: fixed;
   top: 0;
   z-index: 1000;
+  height: var(--menubar-height);
   width: 100vw;
   left: 0;
 
