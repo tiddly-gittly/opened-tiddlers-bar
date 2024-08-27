@@ -1,4 +1,3 @@
 title: $:/SiteTitle
-type: text/vnd.tiddlywiki
 
-<$text text="Modern.TiddlyDev" />
+<<lingo Name $:/plugins/linonetwo/opened-tiddlers-bar/language/>>
