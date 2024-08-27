@@ -1,0 +1,8 @@
+title: $:/plugins/linonetwo/opened-tiddlers-bar/language/zh-Hans/
+
+Name: 「开启的条目」栏
+Description: 灵感来自 Notion 和 VSCode 的主题
+PluginConfigs: 插件设置
+ConfigDescription: 通过这些设置，您可以自定义「开启的条目栏」插件的行为。
+Configs/BarHeight/Caption: 栏的高度
+Configs/BarHeight/Description: 使栏变高或变矮。建议将其设置在 30px 左右。

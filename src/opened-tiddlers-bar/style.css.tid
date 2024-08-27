@@ -1,7 +1,16 @@
-creator: LinOnetwo
-tags: $:/tags/Stylesheet
 title: $:/plugins/linonetwo/opened-tiddlers-bar/style.css
-type: text/vnd.tiddlywiki
+tags: $:/tags/Stylesheet
+
+\rules except horizrule dash
+
+/**
+ * 由于 Tiddlywiki 会把 base.tid 里的 -- 识别为分隔符，变为 - ，所以如果需要用变量，就用 \rules except horizrule dash
+ */
+
+/** 顶部标题栏半透明，别的组件都得根据它下移 */
+body.tc-body {
+  --menubar-height: {{$:/plugins/linonetwo/opened-tiddlers-bar/configs/bar-height}}px;
+}
 
 /** make things in $:/tags/AboveStory position fixed, so it will always on the top */
 section.story-backdrop .opened-tiddlers-bar-container {
@@ -26,8 +35,8 @@ section.story-backdrop div.opened-tiddlers-bar div.opened-tiddlers-bar-tabs {
   flex-direction: row;
   justify-content: flex-start;
 }
-/** make it possible to drag the app using this bar in TidGi, when titleBar is closed */
-<$reveal type="match" state="$:/state/titleBarOpened" text="no">
+/** make it possible to drag the app using this bar in TidGi, when TidGi's titleBar is closed */
+<% if [[$:/state/titleBarOpened]get[text]match[no]] %>
 div.opened-tiddlers-bar-tabs {
   width: 90vw;
   overflow-x: auto;
@@ -42,17 +51,16 @@ div.opened-tiddlers-bar-drag-area {
   width: 5vw;
   -webkit-app-region: drag;
 }
-</$reveal>
+
 /** when hide titlebar and hide sidebar (and on macOS, windows not tested), move bar right to avoid collision with close button on the left top of app */
 /** move right a bit to avoid collision with close button on macOS when title bar hide */
-<$reveal type="match" state="$:/state/titleBarOpened" text="no">
-<$reveal type="match" state="$:/state/sideBarOpened" text="no">
+<% if [[$:/state/sideBarOpened]get[text]match[no]] %>
 section.story-backdrop {
   width: 100vw;
   padding-left: 68px;
 }
-</$reveal>
-</$reveal>
+<% endif %>
+<% endif %>
 
 /** tiddlers bar */
 section.story-backdrop > p > .opened-tiddlers-bar-container, section.story-backdrop > p > .opened-tiddlers-bar-container > div.tc-tab-buttons {

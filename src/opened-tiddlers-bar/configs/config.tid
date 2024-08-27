@@ -1,0 +1,14 @@
+title: $:/plugins/linonetwo/opened-tiddlers-bar/config
+tags: $:/tags/ControlPanel/SettingsTab
+caption: <<lingo Name $:/plugins/linonetwo/opened-tiddlers-bar/language/>>
+
+\procedure lingo-base() $:/plugins/linonetwo/opened-tiddlers-bar/language/
+
+<<lingo Config/Description>>
+
+---
+
+!! <<lingo PluginConfigs>>
+
+;<<lingo Configs/BarHeight/Caption>>
+:<$edit-text tiddler="$:/plugins/linonetwo/opened-tiddlers-bar/configs/bar-height" tag="input" type="number" step="1" size="3" class="tc-tiddler-bar-height"/>px <<lingo Configs/BarHeight/Description>>

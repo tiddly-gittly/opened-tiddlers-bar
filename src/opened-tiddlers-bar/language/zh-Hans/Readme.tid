@@ -1,0 +1,17 @@
+title: $:/plugins/linonetwo/opened-tiddlers-bar/language/zh-Hans/Readme
+
+\procedure lingo-base() $:/plugins/linonetwo/opened-tiddlers-bar/language/
+
+! <<lingo Name>>
+
+<<lingo Description>>
+
+!! 功能
+
+使用中键或 X 按钮关闭标签。
+
+使用 Shift + 鼠标滚轮左右滑动查看。
+
+!! 鸣谢
+
+此插件基于 [[$:/plugins/bj/storytabs|http://bjtools.tiddlyspot.com/]] ，该插件采用 MIT 许可证，感谢 Buggyj！

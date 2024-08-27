@@ -1,0 +1,8 @@
+title: $:/plugins/linonetwo/opened-tiddlers-bar/language/en-GB/
+
+Name: Opened Tiddlers Bar
+Description: Provides VSCode style "Opened Tiddlers" top bar
+PluginConfigs: Plugin Configs
+ConfigDescription: These settings let you customise the behaviour of Opened Tiddlers Bar plugin.
+Configs/BarHeight/Caption: Height of the bar
+Configs/BarHeight/Description: Make the bar taller or shorter. Recommend to set it around 30px.

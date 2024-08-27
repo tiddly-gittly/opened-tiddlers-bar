@@ -1,8 +1,5 @@
-creator: [[Jeffrey Wikinson]]
-modifier: LinOnetwo
-tags: $:/tags/Macro
 title: $:/plugins/linonetwo/opened-tiddlers-bar/ui
-type: text/vnd.tiddlywiki
+tags: $:/tags/Macro
 
 \define onMiddleClick()
 <$list filter="[<event-mousebutton>match[middle]]">

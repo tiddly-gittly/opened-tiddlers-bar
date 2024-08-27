@@ -1,8 +1,5 @@
-creator: [[Jeffrey Wikinson]]
-modifier: LinOnetwo
-tags: $:/tags/AboveStory
 title: $:/plugins/linonetwo/opened-tiddlers-bar/AboveStory
-type: text/vnd.tiddlywiki
+tags: $:/tags/AboveStory
 
 <div class="opened-tiddlers-bar-container tc-adjust-top-of-scroll">
   <<opened-tiddlers-bar>>

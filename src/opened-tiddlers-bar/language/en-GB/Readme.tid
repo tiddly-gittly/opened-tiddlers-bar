@@ -1,0 +1,17 @@
+title: $:/plugins/linonetwo/opened-tiddlers-bar/language/en-GB/Readme
+
+\procedure lingo-base() $:/plugins/linonetwo/opened-tiddlers-bar/language/
+
+! <<lingo Name>>
+
+<<lingo Description>>
+
+!! Features
+
+Use the middle mouse button or the X button to close the tab.
+
+Use Shift + mouse wheel to swipe sideways to view.
+
+!! Credits
+
+This plugin is based on [[$:/plugins/bj/storytabs|http://bjtools.tiddlyspot.com/]] , which is in MIT license, thank you, Buggyj!
