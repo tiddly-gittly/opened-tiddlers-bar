@@ -1,19 +1,20 @@
 title: $:/plugins/linonetwo/opened-tiddlers-bar/ui
-tags: $:/tags/Macro
+tags: $:/tags/Global
 
-\define onMiddleClick()
+\procedure on-opened-tiddlers-bar-item-middle-click()
 <$list filter="[<event-mousebutton>match[middle]]">
 <$action-sendmessage $message="tm-close-tiddler" $param=<<currentTab>>/>
 </$list>
 \end
-\define opened-tiddlers-bar()
+
+\procedure opened-tiddlers-bar()
 \whitespace trim
 <div class="tc-tab-buttons opened-tiddlers-bar" >
   <div class="opened-tiddlers-bar-drag-area" />
   <div class="opened-tiddlers-bar-tabs">
     <$list filter="[list[$:/StoryList]]" history="$:/HistoryList" variable="currentTab">
       <$reveal type="match" state="$:/HistoryList!!current-tiddler" text=<<currentTab>>>
-        <$eventcatcher $auxclick=<<onMiddleClick>>>
+        <$eventcatcher $auxclick=<<on-opened-tiddlers-bar-item-middle-click>>>
           <div style="display:inline">
             <$button to=<<currentTab>> class="tc-tab-selected tc-tab">
               <$view tiddler=<<currentTab>> field="name">
@@ -26,7 +27,7 @@ tags: $:/tags/Macro
         </$eventcatcher>
       </$reveal>
       <$reveal type="nomatch" state="$:/HistoryList!!current-tiddler" text=<<currentTab>>>
-        <$eventcatcher $auxclick=<<onMiddleClick>>>
+        <$eventcatcher $auxclick=<<on-opened-tiddlers-bar-item-middle-click>>>
           <div>
               <$button to=<<currentTab>> class="tc-tab" >
                 <$view tiddler=<<currentTab>> field="name">

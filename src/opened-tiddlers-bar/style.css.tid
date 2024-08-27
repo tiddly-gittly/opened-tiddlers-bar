@@ -26,6 +26,9 @@ section.story-backdrop .opened-tiddlers-bar-container {
   overflow: -moz-scrollbars-none;
   scrollbar-width: none;
 }
+.opened-tiddlers-bar {
+  height: var(--menubar-height);
+}
 section.story-backdrop .opened-tiddlers-bar-container::-webkit-scrollbar {
   display: none;
 }
