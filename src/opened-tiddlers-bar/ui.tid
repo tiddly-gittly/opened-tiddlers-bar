@@ -15,29 +15,25 @@ tags: $:/tags/Global
     <$list filter="[list[$:/StoryList]]" history="$:/HistoryList" variable="currentTab">
       <$reveal type="match" state="$:/HistoryList!!current-tiddler" text=<<currentTab>>>
         <$eventcatcher $auxclick=<<on-opened-tiddlers-bar-item-middle-click>>>
-          <div style="display:inline">
-            <$button to=<<currentTab>> class="tc-tab-selected tc-tab">
-              <$view tiddler=<<currentTab>> field="name">
-              <$view tiddler=<<currentTab>> field="title" /></$view>
-              <$button message="tm-close-tiddler" param=<<currentTab>> class="tc-image-button opened-tiddlers-bar-close-button">
-                &times;
-              </$button>
+          <$button to=<<currentTab>> class="tc-tab-selected tc-tab">
+            <$view tiddler=<<currentTab>> field="name">
+            <$view tiddler=<<currentTab>> field="title" /></$view>
+            <$button message="tm-close-tiddler" param=<<currentTab>> class="tc-image-button opened-tiddlers-bar-close-button">
+              &times;
             </$button>
-          </div>
+          </$button>
         </$eventcatcher>
       </$reveal>
       <$reveal type="nomatch" state="$:/HistoryList!!current-tiddler" text=<<currentTab>>>
         <$eventcatcher $auxclick=<<on-opened-tiddlers-bar-item-middle-click>>>
-          <div>
-              <$button to=<<currentTab>> class="tc-tab" >
-                <$view tiddler=<<currentTab>> field="name">
-                  <$view tiddler=<<currentTab>> field="title" />
-                </$view>
-                <$button message="tm-close-tiddler" param=<<currentTab>> class="tc-image-button opened-tiddlers-bar-close-button">
-                  &times;
-                </$button>
-              </$button>
-          </div>
+          <$button to=<<currentTab>> class="tc-tab" >
+            <$view tiddler=<<currentTab>> field="name">
+              <$view tiddler=<<currentTab>> field="title" />
+            </$view>
+            <$button message="tm-close-tiddler" param=<<currentTab>> class="tc-image-button opened-tiddlers-bar-close-button">
+              &times;
+            </$button>
+          </$button>
         </$eventcatcher>
       </$reveal>
     </$list>
