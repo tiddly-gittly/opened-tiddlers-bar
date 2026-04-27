@@ -1,7 +1,7 @@
 {
   "url": "https://tiddly-gittly.github.io/Modern.TiddlyDev/",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "1.1.0",
   "scripts": {
     "dev": "tiddlywiki-plugin-dev dev",
     "dev:wiki": "tiddlywiki-plugin-dev dev --write-wiki",

@@ -7,35 +7,47 @@ tags: $:/tags/Global
 </$list>
 \end
 
+\procedure on-drop-tab(droppedTitle)
+<$action-listops $tiddler="$:/StoryList" $field="list" $subfilter="-[<droppedTitle>] +[insertbefore:list<currentTab>,<droppedTitle>]"/>
+\end
+
 \procedure opened-tiddlers-bar()
 \whitespace trim
 <div class="tc-tab-buttons opened-tiddlers-bar" >
   <div class="opened-tiddlers-bar-drag-area" />
   <div class="opened-tiddlers-bar-tabs">
     <$list filter="[list[$:/StoryList]]" history="$:/HistoryList" variable="currentTab">
-      <$reveal type="match" state="$:/HistoryList!!current-tiddler" text=<<currentTab>>>
-        <$eventcatcher $auxclick=<<on-opened-tiddlers-bar-item-middle-click>>>
-          <$button to=<<currentTab>> class="tc-tab-selected tc-tab">
-            <$view tiddler=<<currentTab>> field="name">
-            <$view tiddler=<<currentTab>> field="title" /></$view>
-            <$button message="tm-close-tiddler" param=<<currentTab>> class="tc-image-button opened-tiddlers-bar-close-button">
-              &times;
-            </$button>
-          </$button>
-        </$eventcatcher>
-      </$reveal>
-      <$reveal type="nomatch" state="$:/HistoryList!!current-tiddler" text=<<currentTab>>>
-        <$eventcatcher $auxclick=<<on-opened-tiddlers-bar-item-middle-click>>>
-          <$button to=<<currentTab>> class="tc-tab" >
-            <$view tiddler=<<currentTab>> field="name">
-              <$view tiddler=<<currentTab>> field="title" />
-            </$view>
-            <$button message="tm-close-tiddler" param=<<currentTab>> class="tc-image-button opened-tiddlers-bar-close-button">
-              &times;
-            </$button>
-          </$button>
-        </$eventcatcher>
-      </$reveal>
+      <$droppable actions=<<on-drop-tab>> class="opened-tiddlers-bar-droppable">
+        <$draggable tiddler=<<currentTab>>>
+          <$reveal type="match" state="$:/HistoryList!!current-tiddler" text=<<currentTab>>>
+            <$eventcatcher $auxclick=<<on-opened-tiddlers-bar-item-middle-click>>>
+              <$button to=<<currentTab>> tooltip=<<currentTab>> class="tc-tab-selected tc-tab">
+                <span class="opened-tiddlers-bar-tab-title">
+                  <$view tiddler=<<currentTab>> field="name">
+                  <$view tiddler=<<currentTab>> field="title" /></$view>
+                </span>
+                <$button message="tm-close-tiddler" param=<<currentTab>> class="tc-image-button opened-tiddlers-bar-close-button">
+                  &times;
+                </$button>
+              </$button>
+            </$eventcatcher>
+          </$reveal>
+          <$reveal type="nomatch" state="$:/HistoryList!!current-tiddler" text=<<currentTab>>>
+            <$eventcatcher $auxclick=<<on-opened-tiddlers-bar-item-middle-click>>>
+              <$button to=<<currentTab>> tooltip=<<currentTab>> class="tc-tab" >
+                <span class="opened-tiddlers-bar-tab-title">
+                  <$view tiddler=<<currentTab>> field="name">
+                    <$view tiddler=<<currentTab>> field="title" />
+                  </$view>
+                </span>
+                <$button message="tm-close-tiddler" param=<<currentTab>> class="tc-image-button opened-tiddlers-bar-close-button">
+                  &times;
+                </$button>
+              </$button>
+            </$eventcatcher>
+          </$reveal>
+        </$draggable>
+      </$droppable>
     </$list>
   </div>
   <div class="opened-tiddlers-bar-drag-area" />

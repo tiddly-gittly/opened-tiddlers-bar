@@ -73,9 +73,9 @@ section.story-backdrop > p > .opened-tiddlers-bar-container, section.story-backd
   background: transparent;
 }
 section.story-backdrop > p > .opened-tiddlers-bar-container {
-  background-color: white;
   backdrop-filter: blur(3px);
-  background: <<colour tab-background-selected>>;
+  background: <<colour page-background>>;
+  border-bottom: 1px solid <<colour tab-border>>;
 }
 
 
@@ -85,6 +85,17 @@ div.opened-tiddlers-bar-tabs button.tc-tab {
   margin: 0;
   padding: 5px 10px;
   padding-right: 2px;
+  display: inline-flex;
+  align-items: center;
+  max-width: 200px;
+}
+/** tab title text truncation */
+div.opened-tiddlers-bar-tabs button.tc-tab span.opened-tiddlers-bar-tab-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
 }
 /** x button */
 div.opened-tiddlers-bar-tabs button.opened-tiddlers-bar-close-button {
@@ -111,7 +122,27 @@ div.opened-tiddlers-bar.tc-tab-buttons {
   margin: 0;
 }
 
-/** 收起侧边栏的按钮 */
+/** draggable tab drop zone */
+div.opened-tiddlers-bar-tabs span.tc-droppable {
+  display: inline-flex;
+  height: 100%;
+}
+div.opened-tiddlers-bar-tabs span.tc-droppable.tc-dragover {
+  border-left: 2px solid <<colour primary>>;
+}
+
+/** 收起侧边栏的按钮 - 下移避免被顶部标题栏遮挡 */
 .tc-topbar-right {
-  top: 18px;
+  top: calc(var(--menubar-height) + 4px);
+  z-index: 999;
+}
+
+/** 移动端隐藏标题栏，节省垂直空间 */
+@media (max-width: 768px) {
+  section.story-backdrop .opened-tiddlers-bar-container {
+    display: none;
+  }
+  body.tc-body {
+    --menubar-height: 0px;
+  }
 }
