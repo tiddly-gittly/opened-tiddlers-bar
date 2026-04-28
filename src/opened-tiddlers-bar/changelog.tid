@@ -1,0 +1,22 @@
+title: $:/plugins/linonetwo/opened-tiddlers-bar/changelog
+caption: Changelog
+
+! Changelog
+
+!! v1.2.0 (2026-04-28)
+
+* refactor: split `style.css.tid` into pure `style.css`+`style.css.meta` and `style.color.tid` for dynamic theme-dependent rules
+* fix: remove bottom border on bar that looked visually awkward
+
+!! v1.1.0 (2026-04-27)
+
+* fix [[#4|https://github.com/tiddly-gittly/opened-tiddlers-bar/issues/4]]: Dark mode — bar background now follows TiddlyWiki theme color instead of hardcoded white
+* fix [[#6|https://github.com/tiddly-gittly/opened-tiddlers-bar/issues/6]]: Sidebar toggle button obscured — `.tc-topbar-right` now positioned below bar height dynamically
+* fix [[#7|https://github.com/tiddly-gittly/opened-tiddlers-bar/issues/7]]: Long tab titles now truncate with ellipsis; full title shown on hover tooltip
+* fix [[#9|https://github.com/tiddly-gittly/opened-tiddlers-bar/issues/9]]: Bar is hidden on mobile viewports (≤768px) to save vertical space
+* fix [[#2|https://github.com/tiddly-gittly/opened-tiddlers-bar/issues/2]]: Tabs are now draggable to reorder via TiddlyWiki `$draggable`/`$droppable` widgets
+* feat: add Playwright automated tests covering all fixed issues
+
+!! v1.0.0
+
+* Initial release
