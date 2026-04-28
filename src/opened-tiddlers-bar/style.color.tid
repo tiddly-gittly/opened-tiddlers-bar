@@ -1,0 +1,49 @@
+title: $:/plugins/linonetwo/opened-tiddlers-bar/style.color
+tags: $:/tags/Stylesheet
+
+\rules except horizrule dash
+
+/**
+ * 由于 Tiddlywiki 会把 base.tid 里的 -- 识别为分隔符，变为 - ，所以如果需要用变量，就用 \rules except horizrule dash
+ */
+
+/** 顶部标题栏高度变量，依赖配置 tiddler */
+body.tc-body {
+  --menubar-height: {{$:/plugins/linonetwo/opened-tiddlers-bar/configs/bar-height}}px;
+}
+
+/** bar 背景色跟随主题 */
+section.story-backdrop > p > .opened-tiddlers-bar-container {
+  background: <<colour page-background>>;
+}
+
+/** draggable tab: 拖拽悬停时显示插入位置指示线 */
+div.opened-tiddlers-bar-tabs span.tc-droppable.tc-dragover {
+  border-left: 2px solid <<colour primary>>;
+}
+
+/** make it possible to drag the app using this bar in TidGi, when TidGi's titleBar is closed */
+<% if [[$:/state/titleBarOpened]get[text]match[no]] %>
+div.opened-tiddlers-bar-tabs {
+  width: 90vw;
+  overflow-x: auto;
+  white-space: nowrap;
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
+}
+div.opened-tiddlers-bar-tabs::-webkit-scrollbar {
+  display: none;
+}
+div.opened-tiddlers-bar-drag-area {
+  width: 5vw;
+  -webkit-app-region: drag;
+}
+
+/** move right a bit to avoid collision with close button on macOS when title bar hide */
+<% if [[$:/state/sideBarOpened]get[text]match[no]] %>
+section.story-backdrop {
+  width: 100vw;
+  padding-left: 68px;
+}
+<% endif %>
+<% endif %>
